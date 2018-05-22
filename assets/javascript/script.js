@@ -4,26 +4,44 @@ losses = 0;
 guessesLeft = 9;
 guessedLetters = [];
 
+function reset() {
+    guessedLetters = [];
+    guessesLeft = 9;
+}
+
+function randomLetter () {
+    alphabet = "abcdefghijklmnopqrstuvwxyz";
+    var numb = Math.floor(Math.random() * 26);
+    var letter = alphabet.charAt(numb);
+    return letter;
+}
+
+function updateGuessesLeft() {
+    document.querySelector("#guessesLeft").innerHTML = guessesLeft;
+}
+
+function updateWins() {
+    document.querySelector("#wins").innerHTML = wins;
+}
+
+function updateLosses() {
+    document.querySelector("#losses").innerHTML = losses;
+}
+
+function addGuessed() {
+    document.querySelector("#lettersGuessed").innerHTML = guessedLetters;
+}
+
+
+
+
 document.onkeyup = function(event) {
 
     userGuess = event.key;
 
     guessedLetters.push(userGuess);
 
-    console.log(guessedLetters);
-
-    function reset() {
-        guessedLetters = [];
-        guessesLeft = 9;
-    }
-
-    function randomLetter () {
-        alphabet = "abcdefghijklmnopqrstuvwxyz";
-        var numb = Math.floor(Math.random() * 26);
-        var letter = alphabet.charAt(numb);
-        return letter;
-    }
-    console.log(randomLetter());
+    addGuessed();
 
     if ((userGuess === randomLetter())) {
         wins += 1;
@@ -31,7 +49,8 @@ document.onkeyup = function(event) {
         reset();
     }
     else if ((userGuess != randomLetter())) {
-        guessesLeft -= 1;   
+        guessesLeft -= 1;  
+        updateGuessesLeft(); 
     }
 
     if (guessesLeft === 0) {
@@ -40,31 +59,11 @@ document.onkeyup = function(event) {
         reset();
     }
 
-    function updateGuessesLeft() {
-       document.querySelector("#guessesLeft").innerHTML = guessesLeft;
-    }
-
-    updateGuessesLeft();
-
-    function updateWins() {
-        document.querySelector("#wins").innerHTML = wins;
-    }
-
-    function updateLosses() {
-        document.querySelector("#losses").innerHTML = losses;
-    }
-    
-    function addGuessed() {
-        document.querySelector("#lettersGuessed").innerHTML = guessedLetters;
-    }
-
-    addGuessed();
-
-   
-
-    console.log(guessesLeft);
-    console.log(losses);
-    console.log(wins);
+    //console.log(guessedLetters);
+    //console.log(randomLetter());
+    //console.log(guessesLeft);
+    //console.log(losses);
+    //console.log(wins);
 
 }
         
