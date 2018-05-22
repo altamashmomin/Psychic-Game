@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+         
+               <title>Psychic Game</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!--Jumbotron-->
+
+            <div class="jumbotron col-lg-12 text-center">
+                <h1>Welcome to the Psychic Game</h1>
+            </div>
+
+            <!--First row with wins/losses-->
+
+            <div class="row">
+                <div class="card col-lg-6 p-2 my-2">
+                    <div class="card-body">
+                        <h1 class="card title p-2 text-center">Wins:</h1>
+                        <h2 class="card title p-2 text-center" id="wins">0</h2>
+                    </div>
+                </div>
+
+                <div class="card p-2 col-lg-6 my-2">
+                    <div class="card-body">
+                        <h1 class="card title p-2 text-center">Losses:</h1>
+                        <h2 class="card title p-2 text-center" id="losses">0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!--Second row with guesses left & letters guessed-->
+
+            <div class="row">
+                <div class="card p-2 my-2 col-lg-4">
+                    <div class="card-body">
+                        <h1 class="card title p-2 text-center">Guesses Left:</h1>
+                        <h2 class="card title p-2 text-center" id="guessesLeft">9</h2>
+                    </div>
+                </div>
+
+                <div class="card p-2 my-2 col-lg-8">
+                    <div class="card-body">
+                        <h1 class="card title p-2 text-center">Letters Guessed:</h1>
+                        <h2 class="card title p-2 text-center" id="lettersGuessed"></h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="assets/javascript/script.js">
+        document.querySelector("#guessesLeft").innerHTML = guessesLeft;
+        </script>
+
+        
+
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
