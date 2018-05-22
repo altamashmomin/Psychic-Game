@@ -42,6 +42,7 @@ document.onkeyup = function(event) {
     guessedLetters.push(userGuess);
 
     addGuessed();
+    
 
     if ((userGuess === randomLetter())) {
         wins += 1;
@@ -53,7 +54,7 @@ document.onkeyup = function(event) {
         updateGuessesLeft(); 
     }
 
-    if (guessesLeft === 0) {
+    if (guessesLeft == 0) {
         losses += 1;
         updateLosses();  
         reset();
