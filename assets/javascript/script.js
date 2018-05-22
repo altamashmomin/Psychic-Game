@@ -6,7 +6,16 @@ guessedLetters = [];
 
 document.onkeyup = function(event) {
 
-    userGuess = event.key; 
+    userGuess = event.key;
+
+    guessedLetters.push(userGuess);
+
+    console.log(guessedLetters);
+
+    function reset() {
+        guessedLetters = [];
+        guessesLeft = 9;
+    }
 
     function randomLetter () {
         alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -18,24 +27,40 @@ document.onkeyup = function(event) {
 
     if ((userGuess === randomLetter())) {
         wins += 1;
+        updateWins();
+        reset();
     }
     else if ((userGuess != randomLetter())) {
-        guessesLeft -= 1;    
+        guessesLeft -= 1;   
     }
 
     if (guessesLeft === 0) {
         losses += 1;
-        guessesLeft += 9;
+        updateLosses();  
+        reset();
     }
 
-    //var updateGuessesLeft = function() {
-       // document.querySelector("#guessesLeft").innerHTML = toString(guessesLeft);
-   // }
+    function updateGuessesLeft() {
+       document.querySelector("#guessesLeft").innerHTML = guessesLeft;
+    }
 
-   // function guessedLetters() {
-       // guessed = append.randomLetter(letter)
-   // }
+    updateGuessesLeft();
+
+    function updateWins() {
+        document.querySelector("#wins").innerHTML = wins;
+    }
+
+    function updateLosses() {
+        document.querySelector("#losses").innerHTML = losses;
+    }
     
+    function addGuessed() {
+        document.querySelector("#lettersGuessed").innerHTML = guessedLetters;
+    }
+
+    addGuessed();
+
+   
 
     console.log(guessesLeft);
     console.log(losses);
