@@ -2,6 +2,7 @@
 wins = 0;
 losses = 0;
 guessesLeft = 9;
+guessedLetters = [];
 
 document.onkeyup = function(event) {
 
@@ -27,7 +28,13 @@ document.onkeyup = function(event) {
         guessesLeft += 9;
     }
 
-    document.querySelector("#wins").innerHtml = wins;
+    //var updateGuessesLeft = function() {
+       // document.querySelector("#guessesLeft").innerHTML = toString(guessesLeft);
+   // }
+
+   // function guessedLetters() {
+       // guessed = append.randomLetter(letter)
+   // }
     
 
     console.log(guessesLeft);
